@@ -1,0 +1,19 @@
+diff --git a/node_modules/@react-native-community/cli-platform-ios/native_modules.rb b/node_modules/@react-native-community/cli-platform-ios/native_modules.rb
+index 431282a..b37f5bb 100644
+--- a/node_modules/@react-native-community/cli-platform-ios/native_modules.rb
++++ b/node_modules/@react-native-community/cli-platform-ios/native_modules.rb
+@@ -17,9 +17,11 @@ def use_native_modules!(config = nil)
+   if (!config)
+     json = []
+ 
+-    IO.popen("npx --quiet react-native config") do |data|
+-      while line = data.gets
+-        json << line
++    Dir.chdir('../../') do
++      IO.popen("npx --quiet react-native config") do |data|
++        while line = data.gets
++          json << line
++        end
+       end
+     end
+ 
