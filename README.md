@@ -8,8 +8,8 @@ This is the source code from [this blog post]().
 
 _Requirements: [React Native](https://facebook.github.io/react-native/docs/getting-started.html#native) (last tested on react-native@0.61)_
 
-- `$ git clone git@github.com:brunolemos/react-native-web-monorepo.git`
-- `$ cd react-native-web-monorepo`
+- `$ git clone git@github.com:ythecombinator/react-native-web-monorepo-navigation.git`
+- `$ cd react-native-web-monorepo-navigation`
 - `$ yarn`
 - `$ cd packages/mobile/ios`
 - `$ pod install`
