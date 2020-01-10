@@ -4,7 +4,7 @@ import { SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, View } from 'rea
 
 import { AppHeader } from '../AppHeader'
 import { Link } from '../Link'
-import { routesMap } from '../utils/router'
+import { routes } from '../utils/router'
 import { styles } from './styles'
 
 export function CodeSharing() {
@@ -29,7 +29,7 @@ export function CodeSharing() {
                 to change this screen and then come back to see your edits (in
                 the phone or the browser).
               </Text>
-              <Link routeName={routesMap.features.webSupport.path}>
+              <Link routeName={routes.features.webSupport.path}>
                 <Text style={styles.sectionLink}>
                   Check "Web support via react-native-web"
                 </Text>

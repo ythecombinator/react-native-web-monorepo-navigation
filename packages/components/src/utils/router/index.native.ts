@@ -1,4 +1,4 @@
-const routesMap = {
+const routes = {
   about: {
     _navigator: { name: "About", path: "about_navigator" },
     _root: { name: "About", path: "about" }
@@ -10,4 +10,4 @@ const routesMap = {
   }
 };
 
-export { routesMap };
+export { routes };

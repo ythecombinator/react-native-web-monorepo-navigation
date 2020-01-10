@@ -14,6 +14,6 @@ interface RouteConfigsMap {
   };
 }
 
-const routesMap: RouteConfigsMap;
+const routes: RouteConfigsMap;
 
-export { routesMap };
+export { routes };

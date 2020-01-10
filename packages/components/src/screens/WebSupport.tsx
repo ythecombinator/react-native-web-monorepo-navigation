@@ -4,7 +4,7 @@ import { SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, View } from 'rea
 
 import { AppHeader } from '../AppHeader'
 import { Link } from '../Link'
-import { routesMap } from '../utils/router'
+import { routes } from '../utils/router'
 import { styles } from './styles'
 
 export function WebSupport() {
@@ -34,7 +34,7 @@ export function WebSupport() {
                 <Text style={styles.highlight}>.ios</Text>,{" "}
                 <Text style={styles.highlight}>.native</Text>, etc).
               </Text>
-              <Link routeName={routesMap.features.codeSharing.path}>
+              <Link routeName={routes.features.codeSharing.path}>
                 <Text style={styles.sectionLink}>
                   Check "Code sharing using Monorepo"
                 </Text>
