@@ -3,24 +3,25 @@ import {
   useRoute as useNativeRoute,
 } from '@react-navigation/core'
 
-import { Route } from '../../models/router'
+import { NavigationParams, Route } from '../../models/router'
 
 const useNavigation = () => {
-  const { navigate } = useNativeNavigation()
+  const { navigate } = useNativeNavigation();
 
   return {
-    navigate,
-  }
-}
+    navigate
+  };
+};
 
 const useRoute = () => {
-  const { key, name } = useNativeRoute()
+  const { name, params } = useNativeRoute();
 
   const route: Route = {
     path: name,
-  }
+    params: params as NavigationParams<any>
+  };
 
-  return route
-}
+  return route;
+};
 
-export { useNavigation, useRoute }
+export { useNavigation, useRoute };
