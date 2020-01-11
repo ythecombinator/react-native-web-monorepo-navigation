@@ -6,18 +6,18 @@ import { TouchableOpacity } from 'react-native'
 import { LinkProps } from './Link.models'
 
 const Link = (props: LinkProps) => {
-  const { routeName } = props
-  const navigation = useNavigation()
+  const { path, params } = props;
+  const navigation = useNavigation();
 
   const navigate = useCallback(() => {
-    navigation.navigate(routeName)
-  }, [routeName])
+    navigation.navigate(path, params);
+  }, [path, params]);
 
   return (
     <TouchableOpacity accessibilityRole="button" onPress={navigate}>
       {props.children}
     </TouchableOpacity>
-  )
-}
+  );
+};
 
-export { Link }
+export { Link };

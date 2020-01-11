@@ -1,11 +1,18 @@
 import React, { ReactChild } from 'react'
 
+import { stringify } from 'query-string'
 import { Link as DOMLink } from 'react-router-dom'
 
 import { LinkProps } from './Link.models'
 
 const Link = (props: LinkProps) => {
-  return <DOMLink to={props.routeName}>{props.children}</DOMLink>
-}
+  const { path, params: qsParams = {} } = props;
 
-export { Link }
+  const params = `?${stringify(qsParams)}`;
+
+  return (
+    <DOMLink to={{ pathname: path, search: params }}>{props.children}</DOMLink>
+  );
+};
+
+export { Link };
