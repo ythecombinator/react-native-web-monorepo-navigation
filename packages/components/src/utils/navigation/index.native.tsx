@@ -6,10 +6,11 @@ import {
 import { NavigationParams, Route } from '../../models/router'
 
 const useNavigation = () => {
-  const { navigate } = useNativeNavigation();
+  const { navigate, goBack } = useNativeNavigation();
 
   return {
-    navigate
+    navigate,
+    goBack
   };
 };
 

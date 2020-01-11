@@ -3,10 +3,11 @@ import { useHistory, useLocation, useParams } from 'react-router-dom'
 import { Route } from '../../models/router'
 
 const useNavigation = () => {
-  const history = useHistory();
+  const { push, goBack } = useHistory();
 
   return {
-    navigate: history.push
+    navigate: push,
+    goBack
   };
 };
 
