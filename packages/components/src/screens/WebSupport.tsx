@@ -1,13 +1,29 @@
 import React from 'react'
 
-import { SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native'
+import {
+  Button,
+  SafeAreaView,
+  ScrollView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native'
 
 import { AppHeader } from '../AppHeader'
 import { Link } from '../Link'
+import { useRoute } from '../utils/navigation'
+import { useNavigation } from '../utils/navigation'
 import { routes } from '../utils/router'
 import { styles } from './styles'
 
 export function WebSupport() {
+  const { params } = useRoute();
+  const { goBack, navigate } = useNavigation();
+
+  console.log(params);
+
   return (
     <>
       <SafeAreaView>
@@ -34,11 +50,39 @@ export function WebSupport() {
                 <Text style={styles.highlight}>.ios</Text>,{" "}
                 <Text style={styles.highlight}>.native</Text>, etc).
               </Text>
-              <Link routeName={routes.features.codeSharing.path}>
+
+              {/* Navigate using <Link/> */}
+              <Link
+                path={routes.features.codeSharing.path}
+                params={{ paramComingFromWebSupportRoute: 1 }}
+              >
                 <Text style={styles.sectionLink}>
-                  Check "Code sharing using Monorepo"
+                  Link to "Code sharing using Monorepo"
                 </Text>
               </Link>
+
+              {/* Navigate using navigate() */}
+              <TouchableOpacity
+                style={styles.button}
+                accessibilityRole="button"
+              >
+                <Button
+                  title={`Navigate to "Code sharing using Monorepo"`}
+                  onPress={() => {
+                    navigate(routes.features.codeSharing.path, {
+                      paramComingFromWebSupportRoute: 2
+                    });
+                  }}
+                />
+              </TouchableOpacity>
+
+              {/* Navigate using goBack() */}
+              <TouchableOpacity
+                style={styles.button}
+                accessibilityRole="button"
+              >
+                <Button title="Go back" onPress={goBack} />
+              </TouchableOpacity>
             </View>
           </View>
         </ScrollView>
