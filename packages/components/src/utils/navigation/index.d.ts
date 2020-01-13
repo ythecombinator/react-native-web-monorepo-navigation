@@ -2,6 +2,7 @@ import { Navigate, Route } from '../../models/router'
 
 const useNavigation: () => {
   navigate: Navigate;
+  replace: Navigate;
   goBack: () => {};
 };
 

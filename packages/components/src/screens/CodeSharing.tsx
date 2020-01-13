@@ -1,15 +1,6 @@
 import React from 'react'
 
-import {
-  Button,
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native'
+import { Button, SafeAreaView, ScrollView, Text, TouchableOpacity, View } from 'react-native'
 
 import { AppHeader } from '../AppHeader'
 import { Link } from '../Link'
@@ -19,7 +10,7 @@ import { styles } from './styles'
 
 export function CodeSharing() {
   const { params } = useRoute();
-  const { goBack, navigate } = useNavigation();
+  const { goBack, navigate, replace } = useNavigation();
 
   console.log(params);
 
@@ -65,6 +56,21 @@ export function CodeSharing() {
                   onPress={() => {
                     navigate(routes.features.webSupport.path, {
                       paramComingFromCodeSharingRoute: 2
+                    });
+                  }}
+                />
+              </TouchableOpacity>
+
+              {/* Navigate using replace() */}
+              <TouchableOpacity
+                style={styles.button}
+                accessibilityRole="button"
+              >
+                <Button
+                  title={`Replace to "Code sharing using Monorepo"`}
+                  onPress={() => {
+                    replace(routes.features.codeSharing.path, {
+                      paramComingFromWebSupportRoute: 3
                     });
                   }}
                 />

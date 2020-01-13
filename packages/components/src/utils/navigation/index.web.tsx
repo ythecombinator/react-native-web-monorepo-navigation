@@ -23,7 +23,7 @@ const buildUrl = (pathname: string, params: NavigationParams<any>) => {
 // Hooks
 
 const useNavigation = () => {
-  const { push, goBack } = useHistory();
+  const { push, replace: historyReplace, goBack } = useHistory();
 
   const navigate = useCallback(
     (to: Route["path"], qsParams: Route["params"] = {}) => {
@@ -33,8 +33,17 @@ const useNavigation = () => {
     []
   );
 
+  const replace = useCallback(
+    (to: Route["path"], qsParams: Route["params"] = {}) => {
+      const path = buildUrl(to, qsParams);
+      historyReplace(path);
+    },
+    []
+  );
+
   return {
     navigate,
+    replace,
     goBack
   };
 };
