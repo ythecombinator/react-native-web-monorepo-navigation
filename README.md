@@ -1,6 +1,6 @@
 # Navigation on React Native [Web]
 
-This is the source code from [this blog post]().
+This is the source code from [this blog post](https://dev.to/ythecombinator/driving-towards-a-universal-navigation-strategy-in-react-j60).
 
 ![cover](cover.png)
 
