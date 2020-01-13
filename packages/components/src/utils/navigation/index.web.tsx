@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 
-import { stringify } from 'query-string'
-import { useHistory, useLocation, useParams } from 'react-router-dom'
+import { parse } from 'query-string'
+import { useHistory, useLocation } from 'react-router-dom'
 
 import { NavigationParams, Route } from '../../models/router'
 
@@ -49,8 +49,8 @@ const useNavigation = () => {
 };
 
 const useRoute = () => {
-  const { pathname } = useLocation();
-  const params = useParams();
+  const { pathname, search } = useLocation();
+  const params = parse(search);
 
   const route: Route = {
     path: pathname,
