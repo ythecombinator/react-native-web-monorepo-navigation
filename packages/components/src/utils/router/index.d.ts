@@ -4,16 +4,16 @@ import { RouteConfig } from '../../models/router'
 
 interface RouteConfigsMap {
   about: {
-    _navigator: RouteConfig;
-    _root: RouteConfig;
-  };
+    _navigator: RouteConfig
+    _root: RouteConfig
+  }
   features: {
-    _navigator: RouteConfig;
-    codeSharing: RouteConfig;
-    webSupport: RouteConfig;
-  };
+    _navigator: RouteConfig
+    codeSharing: RouteConfig
+    webSupport: RouteConfig
+  }
 }
 
-const routes: RouteConfigsMap;
+const routes: RouteConfigsMap
 
-export { routes };
+export { routes }

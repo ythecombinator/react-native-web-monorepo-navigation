@@ -27,5 +27,5 @@ export function About() {
         </ScrollView>
       </SafeAreaView>
     </>
-  );
+  )
 }

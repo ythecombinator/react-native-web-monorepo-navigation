@@ -1,6 +1,13 @@
 import React from 'react'
 
-import { Button, SafeAreaView, ScrollView, Text, TouchableOpacity, View } from 'react-native'
+import {
+  Button,
+  SafeAreaView,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native'
 
 import { AppHeader } from '../AppHeader'
 import { Link } from '../Link'
@@ -9,10 +16,10 @@ import { routes } from '../utils/router'
 import { styles } from './styles'
 
 export function WebSupport() {
-  const { params } = useRoute();
-  const { goBack, navigate, replace } = useNavigation();
+  const { params } = useRoute()
+  const { goBack, navigate, replace } = useNavigation()
 
-  console.log(params);
+  console.log(params)
 
   return (
     <>
@@ -28,16 +35,16 @@ export function WebSupport() {
                 Web support via react-native-web
               </Text>
               <Text style={styles.sectionDescription}>
-                Run{" "}
-                <Text style={styles.highlight}>yarn workspace web start</Text>{" "}
+                Run{' '}
+                <Text style={styles.highlight}>yarn workspace web start</Text>{' '}
                 to open this app in the browser.
               </Text>
               <Text style={styles.sectionDescription}>
                 It will share the same code from mobile, unless you create
-                platform-specific files using the{" "}
+                platform-specific files using the{' '}
                 <Text style={styles.highlight}>.web.tsx</Text> extension (also
-                supports <Text style={styles.highlight}>.android</Text>,{" "}
-                <Text style={styles.highlight}>.ios</Text>,{" "}
+                supports <Text style={styles.highlight}>.android</Text>,{' '}
+                <Text style={styles.highlight}>.ios</Text>,{' '}
                 <Text style={styles.highlight}>.native</Text>, etc).
               </Text>
 
@@ -47,7 +54,7 @@ export function WebSupport() {
                 params={{ paramComingFromWebSupportRoute: 1 }}
               >
                 <Text style={styles.sectionLink}>
-                  Link to "Code sharing using Monorepo"
+                  Link to Code sharing using Monorepo
                 </Text>
               </Link>
 
@@ -60,8 +67,8 @@ export function WebSupport() {
                   title={`Navigate to "Code sharing using Monorepo"`}
                   onPress={() => {
                     navigate(routes.features.codeSharing.path, {
-                      paramComingFromWebSupportRoute: 2
-                    });
+                      paramComingFromWebSupportRoute: 2,
+                    })
                   }}
                 />
               </TouchableOpacity>
@@ -75,8 +82,8 @@ export function WebSupport() {
                   title={`Replace to "Code sharing using Monorepo"`}
                   onPress={() => {
                     replace(routes.features.codeSharing.path, {
-                      paramComingFromWebSupportRoute: 3
-                    });
+                      paramComingFromWebSupportRoute: 3,
+                    })
                   }}
                 />
               </TouchableOpacity>
@@ -93,5 +100,5 @@ export function WebSupport() {
         </ScrollView>
       </SafeAreaView>
     </>
-  );
+  )
 }

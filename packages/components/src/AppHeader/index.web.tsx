@@ -7,18 +7,18 @@ export function AppHeader() {
     <View style={styles.container}>
       <Text style={styles.text}>Welcome to React Native Web + Monorepo</Text>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: "center",
-    justifyContent: "center",
-    width: "100%",
-    height: 200
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    height: 200,
   },
   text: {
     fontSize: 36,
-    fontWeight: "600"
-  }
-});
+    fontWeight: '600',
+  },
+})

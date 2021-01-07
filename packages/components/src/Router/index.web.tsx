@@ -29,7 +29,7 @@ const Router = () => {
         </Route>
       </Switch>
     </BrowserRouter>
-  );
-};
+  )
+}
 
-export { Router };
+export { Router }

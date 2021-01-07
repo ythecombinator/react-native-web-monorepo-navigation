@@ -3,20 +3,15 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "react": "16.9.0",
-    "react-art": "16.9.0",
-    "react-dom": "16.9.0",
-    "react-native-web": "0.11.7",
-    "react-scripts": "3.1.1"
+    "react": "17.0.1",
+    "react-art": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-native-web": "0.14.8",
+    "react-scripts": "4.0.0"
   },
   "scripts": {
-    "compile": "tsc -b",
-    "prestart": "npm run compile",
-    "start": "concurrently \"npm run compile -- -w --incremental\" \"npm run _start\"",
-    "_start": "react-app-rewired start",
-    "prebuild": "npm run compile",
+    "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "pretest": "npm run compile",
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject"
   },
@@ -30,9 +25,13 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "babel-plugin-react-native-web": "0.11.7",
-    "concurrently": "5.0.0",
-    "react-app-rewired": "2.1.4",
-    "typescript": "3.6.4"
+    "@testing-library/jest-dom": "5.11.6",
+    "@testing-library/react": "11.2.2",
+    "babel-plugin-react-native-web": "0.14.8",
+    "react-app-rewired": "2.1.6",
+    "typescript": "4.1.2"
+  },
+  "jest": {
+    "preset": "react-native-web"
   }
 }
