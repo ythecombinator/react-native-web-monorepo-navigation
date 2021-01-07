@@ -1,11 +1,11 @@
 import { Navigate, Route } from '../../models/router'
 
 const useNavigation: () => {
-  navigate: Navigate;
-  replace: Navigate;
-  goBack: () => {};
-};
+  navigate: Navigate
+  replace: Navigate
+  goBack: () => {}
+}
 
-const useRoute: () => Route;
+const useRoute: () => Route
 
-export { useNavigation, useRoute };
+export { useNavigation, useRoute }

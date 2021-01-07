@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useState } from 'react'
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { NavigationNativeContainer } from '@react-navigation/native'
+import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
 import { About as AboutScreen } from '../screens/About'
@@ -11,9 +11,9 @@ import { WebSupport as WebSupportScreen } from '../screens/WebSupport'
 import { routes } from '../utils/router'
 
 // Screens
-const About = createStackNavigator();
-const Features = createStackNavigator();
-const Main = createBottomTabNavigator();
+const About = createStackNavigator()
+const Features = createStackNavigator()
+const Main = createBottomTabNavigator()
 
 const AboutNavigator = () => {
   return (
@@ -24,8 +24,8 @@ const AboutNavigator = () => {
         options={{ title: routes.about._root.name }}
       />
     </About.Navigator>
-  );
-};
+  )
+}
 
 const FeaturesNavigator = () => {
   return (
@@ -41,12 +41,12 @@ const FeaturesNavigator = () => {
         options={{ title: routes.features.webSupport.name }}
       />
     </Features.Navigator>
-  );
-};
+  )
+}
 
 const MainNavigator = () => {
   return (
-    <NavigationNativeContainer>
+    <NavigationContainer>
       <Main.Navigator>
         <Main.Screen
           name={routes.about._navigator.path}
@@ -59,10 +59,10 @@ const MainNavigator = () => {
           options={{ title: routes.features._navigator.name }}
         />
       </Main.Navigator>
-    </NavigationNativeContainer>
-  );
-};
+    </NavigationContainer>
+  )
+}
 
-const Router = MainNavigator;
+const Router = MainNavigator
 
-export { Router };
+export { Router }

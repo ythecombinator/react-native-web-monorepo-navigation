@@ -8,56 +8,56 @@ import { NavigationParams, Route } from '../../models/router'
 // Helper functions
 
 const buildUrl = (pathname: string, params: NavigationParams<any>) => {
-  const base = window.location.href;
-  const url = new URL(pathname, base);
+  const base = window.location.href
+  const url = new URL(pathname, base)
 
-  const searchParams = new URLSearchParams(params);
-  url.search = searchParams.toString();
-  const newUrl = url.toString();
+  const searchParams = new URLSearchParams(params)
+  url.search = searchParams.toString()
+  const newUrl = url.toString()
 
-  const finalUrl = newUrl.replace(url.origin, "");
+  const finalUrl = newUrl.replace(url.origin, '')
 
-  return finalUrl;
-};
+  return finalUrl
+}
 
 // Hooks
 
 const useNavigation = () => {
-  const { push, replace: historyReplace, goBack } = useHistory();
+  const { push, replace: historyReplace, goBack } = useHistory()
 
   const navigate = useCallback(
-    (to: Route["path"], qsParams: Route["params"] = {}) => {
-      const path = buildUrl(to, qsParams);
-      push(path);
+    (to: Route['path'], qsParams: Route['params'] = {}) => {
+      const path = buildUrl(to, qsParams)
+      push(path)
     },
-    []
-  );
+    [push],
+  )
 
   const replace = useCallback(
-    (to: Route["path"], qsParams: Route["params"] = {}) => {
-      const path = buildUrl(to, qsParams);
-      historyReplace(path);
+    (to: Route['path'], qsParams: Route['params'] = {}) => {
+      const path = buildUrl(to, qsParams)
+      historyReplace(path)
     },
-    []
-  );
+    [historyReplace],
+  )
 
   return {
     navigate,
     replace,
-    goBack
-  };
-};
+    goBack,
+  }
+}
 
 const useRoute = () => {
-  const { pathname, search } = useLocation();
-  const params = parse(search);
+  const { pathname, search } = useLocation()
+  const params = parse(search)
 
   const route: Route = {
     path: pathname,
-    params
-  };
+    params,
+  }
 
-  return route;
-};
+  return route
+}
 
-export { useNavigation, useRoute };
+export { useNavigation, useRoute }

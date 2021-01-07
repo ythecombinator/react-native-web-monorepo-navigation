@@ -1,6 +1,13 @@
 import React from 'react'
 
-import { Button, SafeAreaView, ScrollView, Text, TouchableOpacity, View } from 'react-native'
+import {
+  Button,
+  SafeAreaView,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native'
 
 import { AppHeader } from '../AppHeader'
 import { Link } from '../Link'
@@ -9,10 +16,10 @@ import { routes } from '../utils/router'
 import { styles } from './styles'
 
 export function CodeSharing() {
-  const { params } = useRoute();
-  const { goBack, navigate, replace } = useNavigation();
+  const { params } = useRoute()
+  const { goBack, navigate, replace } = useNavigation()
 
-  console.log(params);
+  console.log(params)
 
   return (
     <>
@@ -28,7 +35,7 @@ export function CodeSharing() {
                 Code sharing using Monorepo
               </Text>
               <Text style={styles.sectionDescription}>
-                Edit{" "}
+                Edit{' '}
                 <Text style={styles.highlight}>
                   packages/components/App.tsx
                 </Text>
@@ -42,7 +49,7 @@ export function CodeSharing() {
                 params={{ paramComingFromCodeSharingRoute: 1 }}
               >
                 <Text style={styles.sectionLink}>
-                  Link to "Web support via react-native-web"
+                  Link to Web support via react-native-web
                 </Text>
               </Link>
 
@@ -55,8 +62,8 @@ export function CodeSharing() {
                   title={`Navigate to "Web support via react-native-web"`}
                   onPress={() => {
                     navigate(routes.features.webSupport.path, {
-                      paramComingFromCodeSharingRoute: 2
-                    });
+                      paramComingFromCodeSharingRoute: 2,
+                    })
                   }}
                 />
               </TouchableOpacity>
@@ -70,8 +77,8 @@ export function CodeSharing() {
                   title={`Replace to "Code sharing using Monorepo"`}
                   onPress={() => {
                     replace(routes.features.codeSharing.path, {
-                      paramComingFromWebSupportRoute: 3
-                    });
+                      paramComingFromWebSupportRoute: 3,
+                    })
                   }}
                 />
               </TouchableOpacity>
@@ -88,5 +95,5 @@ export function CodeSharing() {
         </ScrollView>
       </SafeAreaView>
     </>
-  );
+  )
 }

@@ -1,16 +1,23 @@
 import React from 'react'
 
-import { SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native'
+import {
+  SafeAreaView,
+  ScrollView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native'
 
 import { AppHeader } from './AppHeader'
 import { Router } from './Router'
 
 export function App() {
-  return <Router />;
+  return <Router />
 }
 
 const styles = StyleSheet.create({
   scrollView: {
-    backgroundColor: "white"
-  }
-});
+    backgroundColor: 'white',
+  },
+})
